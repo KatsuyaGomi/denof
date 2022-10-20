@@ -1,5 +1,9 @@
 {
   "imports": {
+    "@db": "./util/db.ts",
+    "postgres": "https://deno.land/x/postgres@v0.16.1/mod.ts",    
+    "dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
+
     "$fresh/": "https://deno.land/x/fresh@1.1.2/",
     "preact": "https://esm.sh/preact@10.11.0",
     "preact/": "https://esm.sh/preact@10.11.0/",

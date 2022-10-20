@@ -1,0 +1,45 @@
+◇Denoとは
+・Node.jsの製作者が開発したNode.jsで設計ミスと感じていたところを修正
+×　Callback⇒Callback⇒Callback
+Denoでは非同期関数がcallbackを返すといったことをやめて、Promiseを返す
+async awaitを使用してcallbackの連続した可読性の低いCode
+
+・Node.jsと同様のシングルスレッド、非同期i/o
+
+・TypeScriptをデフォルトで採用（jsへのコンパイル等が必要ない、jsでも記載可）
+
+・リンタ、フォーマッタなどがdenoに内蔵
+（環境構築が容易）
+
+◇Deno Freshの構成についてのメモ
+
+dev.ts
+デバッグ起動時のエントリーポイント
+
+main.ts
+エントリーポイント
+
+fresh.gen.ts
+ルーティング、islandsの情報が記載されたファイル
+開発中に自動生成される
+
+import_map.json
+依存関係の記載
+インポートしたいライブラリを記載
+ts,tsxからはkeyを指定してimportする
+
+deno.json
+Deno設定ファイル
+コンパイラ、リンタなどの設定
+deno taskコマンドの記載　nodejsでいうpackage.jsonのscriptを記載できる
+
+routes/
+ルーティングディレクトリ
+このディレクトリにファイルを作成することでルートが自動で生成される
+アクセスするときはファイル名がURLに対応する
+
+statis/
+静的ファイル公開用のディレクトリ、imageファイル
+
+
+♯components
