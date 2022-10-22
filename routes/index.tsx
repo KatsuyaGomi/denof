@@ -2,9 +2,7 @@ import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { tw } from "twind";
 import { Article, findAllArticles } from '@db';
-import  dayjs from 'dayjs';
-dayjs.locale('ja');
-
+import {} from '@date-extension'
 
 export const handler: Handlers<Article[]> = {
   async GET(_, ctx) {
@@ -42,10 +40,10 @@ export default function Home({ data }: PageProps<Article[]>) {
                     {article.title}
                   </h3>
                   <time
-                    dateTime={dayjs(article.created_at).format('YYYY/MM/DD HH:mm:ss')}
+                    dateTime={article.created_at.toJapanDateString()}
                     class={tw("text-gray-500 text-sm")}
                   >
-                    {dayjs(article.created_at).format('YYYY/MM/DD HH:mm:ss')}
+                    {article.created_at.toJapanDateString()}
                   </time>
                 </a>
               </li>

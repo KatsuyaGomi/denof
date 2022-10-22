@@ -1,6 +1,7 @@
 {
   "imports": {
     "@db": "./util/db.ts",
+    "@date-extension": "./util/date_extension.ts",
     "postgres": "https://deno.land/x/postgres@v0.16.1/mod.ts",    
     "dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
     "dayjs": "https://esm.sh/dayjs@1.11.6",
