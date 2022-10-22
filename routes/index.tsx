@@ -39,10 +39,10 @@ export default function Home({ data }: PageProps<Article[]>) {
                     {article.title}
                   </h3>
                   <time
-                    dateTime={article.created_at.toLocaleString()}
+                    dateTime={article.created_at.toLocaleString(new Intl.Locale('jp'))}
                     class={tw("text-gray-500 text-sm")}
                   >
-                    {article.created_at.toLocaleString()}
+                    {article.created_at.toLocaleString(new Intl.Locale('jp'))}
                   </time>
                 </a>
               </li>
