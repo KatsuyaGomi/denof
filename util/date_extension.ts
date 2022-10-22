@@ -9,14 +9,13 @@ declare global {
 }
 
 Date.prototype.toJapanDateString = function() {
-    const format = 'YYYY/MM/DD HH:mm:SS';
+    const format = 'YYYY/MM/DD HH:mm:ss';
     const jpLocale = {
-        utcDiffTime: 9,
-        timeScale: 'hour' as dayjs.ManipulateType
+        utcDiffTime: (9 * 60) + this.getTimezoneOffset(),
+        timeScale: 'minute' as dayjs.ManipulateType
     }
     //UTC基準Timeから日本時間のGMT 9時間を追加
-    const date = dayjs(this.getTime());
-    date.add(jpLocale.utcDiffTime, jpLocale.timeScale);
-    const returnDate = date.format(format).toString();
-    return returnDate;
+    let date = dayjs(this.getTime());
+    date = date.add(jpLocale.utcDiffTime, jpLocale.timeScale);
+    return  date.format(format).toString();
 }
