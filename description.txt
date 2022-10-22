@@ -2,7 +2,7 @@
 ・Node.jsの製作者が開発したNode.jsで設計ミスと感じていたところを修正
 ×　Callback⇒Callback⇒Callback
 Denoでは非同期関数がcallbackを返すといったことをやめて、Promiseを返す
-async awaitを使用してcallbackの連続した可読性の低いCode
+async awaitを使用して可読性の高いCode
 
 ・Node.jsと同様のシングルスレッド、非同期i/o
 
